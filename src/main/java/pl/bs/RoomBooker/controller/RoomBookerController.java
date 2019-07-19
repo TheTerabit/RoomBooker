@@ -21,9 +21,19 @@ public class RoomBookerController {
         this.roomBookerService = roomBookerService;
     }
 
-    @RequestMapping(value = "/reservations", method = RequestMethod.GET)
-    public List<Reservation> getReservations() throws IOException {
-        return this.roomBookerService.getReservations();
+    @RequestMapping(value = "/reservations/all", method = RequestMethod.GET)
+    public List<Reservation> getAllReservations() {
+        return this.roomBookerService.getAllReservations();
+    }
+
+    @RequestMapping(value = "/reservations/future", method = RequestMethod.GET)
+    public List<Reservation> getFutureReservations() {
+        return this.roomBookerService.getFutureReservations();
+    }
+
+    @RequestMapping(value = "/reservations/room/{room}", method = RequestMethod.GET)
+    public List<Reservation> getReservationsByRoom(@PathVariable("room") String room){
+        return this.roomBookerService.getReservationsByRoom(room);
     }
 
     @RequestMapping(value = "/reservations/add", method = RequestMethod.POST)
@@ -35,4 +45,11 @@ public class RoomBookerController {
     public String deleteReservation(@PathVariable("id") Long id) {
         return this.roomBookerService.deleteReservation(id);
     }
+/*
+    @RequestMapping(value = "/reservations/update/{id}", method = RequestMethod.PUT)
+    public String updateReservation(@PathVariable("id") Long id, @RequestBody AddReservationRequest addReservationRequest) {
+        return this.roomBookerService.updateReservation(id, addReservationRequest);
+    }
+
+ */
 }

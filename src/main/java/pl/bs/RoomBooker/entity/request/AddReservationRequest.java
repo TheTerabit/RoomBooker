@@ -9,6 +9,7 @@ public class AddReservationRequest {
 
     private String personName;
     private String eventName;
+    private String room;
     private Timestamp start;
     private Timestamp end;
 }

@@ -16,6 +16,7 @@ public class Reservation {
     private long id;
     private String personName;
     private String eventName;
+    private String room;
     private Timestamp start;
     private Timestamp end;
 
