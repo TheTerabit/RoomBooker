@@ -5,7 +5,7 @@ import lombok.Data;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.sql.Timestamp;
+import java.time.ZonedDateTime;
 
 @Entity
 @Data
@@ -17,7 +17,7 @@ public class Reservation {
     private String personName;
     private String eventName;
     private String room;
-    private Timestamp start;
-    private Timestamp end;
+    private ZonedDateTime start;
+    private ZonedDateTime end;
 
 }

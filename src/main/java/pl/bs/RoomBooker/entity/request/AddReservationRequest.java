@@ -2,7 +2,7 @@ package pl.bs.RoomBooker.entity.request;
 
 import lombok.Data;
 
-import java.sql.Timestamp;
+import java.time.ZonedDateTime;
 
 @Data
 public class AddReservationRequest {
@@ -10,6 +10,6 @@ public class AddReservationRequest {
     private String personName;
     private String eventName;
     private String room;
-    private Timestamp start;
-    private Timestamp end;
+    private ZonedDateTime start;
+    private ZonedDateTime end;
 }
